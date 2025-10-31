@@ -1,2 +1,2 @@
 // Shared utility functions
-export * from './vector';
+export * from './vector.js';

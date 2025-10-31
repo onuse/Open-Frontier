@@ -2,7 +2,7 @@
  * Station-related types
  */
 
-import type { Position, Quaternion, Vector3 } from './physics';
+import type { Position, Quaternion, Vector3 } from './physics.js';
 
 export interface StationDefinition {
   id: string;

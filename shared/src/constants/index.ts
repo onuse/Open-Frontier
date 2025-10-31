@@ -1,3 +1,3 @@
 // Shared constants
-export * from './physics';
-export * from './game';
+export * from './physics.js';
+export * from './game.js';

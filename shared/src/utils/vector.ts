@@ -2,7 +2,7 @@
  * Vector3 utility functions
  */
 
-import type { Vector3 } from '../types/physics';
+import type { Vector3 } from '../types/physics.js';
 
 export function vector3Add(a: Vector3, b: Vector3): Vector3 {
   return {

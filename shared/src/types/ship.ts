@@ -2,7 +2,7 @@
  * Ship-related types
  */
 
-import type { Position, Vector3, Quaternion } from './physics';
+import type { Position, Vector3, Quaternion } from './physics.js';
 
 export interface ShipDefinition {
   id: string;
