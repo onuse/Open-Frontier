@@ -3,6 +3,9 @@
  * Phase 0: Proof of Concept
  */
 
+import * as THREE from 'three';
+import { Game } from './core/game.js';
+
 console.log('Open Frontier - Client starting...');
 console.log('Phase 0: Proof of Concept');
 
@@ -19,17 +22,34 @@ async function init(): Promise<void> {
   try {
     console.log('Initializing client...');
 
-    // TODO: Initialize core systems
-    // - Renderer (Three.js)
-    // - Input handler
-    // - HUD
-    // - Network client
+    // Initialize core game systems
+    const game = new Game();
+
+    // Add a test cube to verify rendering works
+    const geometry = new THREE.BoxGeometry(1, 1, 1);
+    const material = new THREE.MeshBasicMaterial({ color: 0x00ffff, wireframe: true });
+    const cube = new THREE.Mesh(geometry, material);
+    game.getRenderer().add(cube);
+
+    // Animate the cube for visual feedback
+    const animateCube = () => {
+      cube.rotation.x += 0.01;
+      cube.rotation.y += 0.01;
+    };
+
+    // Update cube in game loop (temporary)
+    const originalUpdate = (game as any).update;
+    (game as any).update = function (dt: number) {
+      originalUpdate.call(this, dt);
+      animateCube();
+    };
 
     console.log('Client initialized successfully');
     hideLoading();
 
-    // TODO: Start game loop
-    console.log('Ready to start game loop');
+    // Start game loop
+    game.start();
+    console.log('Game loop running');
   } catch (error) {
     console.error('Failed to initialize client:', error);
     alert('Failed to start Open Frontier. Check console for details.');
