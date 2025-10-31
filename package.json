@@ -19,15 +19,18 @@
     "format": "prettier --write \"**/*.{ts,tsx,json,md}\"",
     "test": "vitest run",
     "test:watch": "vitest",
-    "validate-data": "ts-node scripts/validate-data.ts"
+    "validate-data": "ts-node scripts/validate-data.ts",
+    "screenshot": "ts-node scripts/screenshot.ts"
   },
   "devDependencies": {
+    "@playwright/test": "^1.56.1",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "concurrently": "^8.2.2",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
+    "playwright": "^1.56.1",
     "prettier": "^3.2.5",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3",
