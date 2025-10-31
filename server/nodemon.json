@@ -1,0 +1,9 @@
+{
+  "watch": ["src", "../shared/dist"],
+  "ext": "ts,json",
+  "ignore": ["src/**/*.spec.ts", "src/**/*.test.ts"],
+  "exec": "ts-node --esm src/main.ts",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
